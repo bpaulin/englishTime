@@ -1,0 +1,17 @@
+{
+    "name": "bpaulin/english-time",
+    "require-dev": {
+        "phpunit/phpunit": "^5.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": { "Bpaulin\\EnglishTime\\" : "src/" }
+    },
+    "authors": [
+        {
+            "name": "Bruno Paulin",
+            "email": "brunopaulin@bpaulin.net"
+        }
+    ],
+    "require": {}
+}
