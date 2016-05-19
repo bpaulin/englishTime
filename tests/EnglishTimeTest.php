@@ -30,6 +30,7 @@ class EnglishTimeTest extends PHPUnit_Framework_TestCase
             array(2, 30, "half past two"),
             array(3, 42, "twenty to four"),
             array(3, 23, "twenty-five past three"),
+            array(4, 59, "five o'clock"),
         );
     }
 

@@ -8,18 +8,17 @@ class EnglishTime {
       $minute = date('i', $timestamp);
       $minute = round($minute/5)*5;
       $nf = new \NumberFormatter("en", \NumberFormatter::SPELLOUT);
-      $hourDisplayed = $nf->format($hour);
-      if ($minute == 0) {
-        return $hourDisplayed . " o'clock";
-      }
-      elseif ($minute>30) {
+      if ($minute>30) {
         $hour++;
-        $hourDisplayed = $nf->format($hour);
-        $minute = 60 -$minute;
+        $minute = 60 - $minute;
         $link = 'to';
       }
       else {
         $link = 'past';
+      }
+      $hourDisplayed = $nf->format($hour);
+      if ($minute == 0) {
+        return "$hourDisplayed o'clock";
       }
       switch ($minute) {
       case 15:
