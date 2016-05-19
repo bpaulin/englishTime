@@ -9,8 +9,18 @@ class EnglishTime {
       $nf = new \NumberFormatter("en", \NumberFormatter::SPELLOUT);
       $hourDisplayed = $nf->format($hour);
       if ($minute == 0) {
-        $minuteDisplayed = "o'clock";
+        return $hourDisplayed . " o'clock";
       }
-      return $hourDisplayed . ' ' . $minuteDisplayed;
+      elseif ($minute>30) {
+        $hour++;
+        $hourDisplayed = $nf->format($hour);
+        $minute = 60 -$minute;
+        $link = 'to';
+      }
+      else {
+        $link = 'past';
+      }
+      $minuteDisplayed = $nf->format($minute);
+      return "$minuteDisplayed $link $hourDisplayed";
     }
 }

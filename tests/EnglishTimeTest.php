@@ -23,6 +23,8 @@ class EnglishTimeTest extends PHPUnit_Framework_TestCase
     {
         return array(
             array(11, 00, "eleven o'clock"),
+            array(5, 20, "twenty past five"),
+            array(8, 50, "ten to nine"),
         );
     }
 
