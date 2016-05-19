@@ -6,6 +6,7 @@ class EnglishTime {
     public static function fromTimeStamp( $timestamp ){
       $hour = date('H', $timestamp);
       $minute = date('i', $timestamp);
+      $minute = round($minute/5)*5;
       $nf = new \NumberFormatter("en", \NumberFormatter::SPELLOUT);
       $hourDisplayed = $nf->format($hour);
       if ($minute == 0) {

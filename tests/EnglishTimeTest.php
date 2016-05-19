@@ -28,6 +28,8 @@ class EnglishTimeTest extends PHPUnit_Framework_TestCase
             array(9, 45, "quarter to ten"),
             array(1, 15, "quarter past one"),
             array(2, 30, "half past two"),
+            array(3, 42, "twenty to four"),
+            array(3, 23, "twenty-five past three"),
         );
     }
 
