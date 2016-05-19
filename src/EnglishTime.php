@@ -22,7 +22,7 @@ class EnglishTime {
       }
       switch ($minute) {
       case 15:
-        $minuteDisplayed = 'quarter';
+        $minuteDisplayed = 'a quarter';
         break;
       case 30:
         $minuteDisplayed = 'half';
