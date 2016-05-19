@@ -18,5 +18,13 @@ class EnglishTimeTest extends PHPUnit_Framework_TestCase
         $reflection = new ReflectionClass('BPaulin\EnglishTime\EnglishTime');
         $this->assertFalse($reflection->getConstructor()->isPublic());
     }
+
+    public function testFromTimeStampCanHandleRoundHour()
+    {
+        $this->assertSame(
+            EnglishTime::fromTimeStamp(mktime(11,00)),
+            "eleven o'clock"
+        );
+    }
 }
 
