@@ -19,11 +19,21 @@ class EnglishTimeTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($reflection->getConstructor()->isPublic());
     }
 
-    public function testFromTimeStampCanHandleRoundHour()
+    public function providerFromTimeStamp()
+    {
+        return array(
+            array(11, 00, "eleven o'clock"),
+        );
+    }
+
+    /**
+     * @dataProvider providerFromTimeStamp
+     **/
+    public function testFromTimeStampCanHandleRoundHour($hour, $minute, $result)
     {
         $this->assertSame(
-            EnglishTime::fromTimeStamp(mktime(11,00)),
-            "eleven o'clock"
+            EnglishTime::fromTimeStamp(mktime($hour, $minute)),
+            $result
         );
     }
 }
