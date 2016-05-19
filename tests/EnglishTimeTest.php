@@ -25,6 +25,9 @@ class EnglishTimeTest extends PHPUnit_Framework_TestCase
             array(11, 00, "eleven o'clock"),
             array(5, 20, "twenty past five"),
             array(8, 50, "ten to nine"),
+            array(9, 45, "quarter to ten"),
+            array(1, 15, "quarter past one"),
+            array(2, 30, "half past two"),
         );
     }
 
@@ -39,4 +42,5 @@ class EnglishTimeTest extends PHPUnit_Framework_TestCase
         );
     }
 }
+
 

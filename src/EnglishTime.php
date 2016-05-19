@@ -20,7 +20,16 @@ class EnglishTime {
       else {
         $link = 'past';
       }
-      $minuteDisplayed = $nf->format($minute);
+      switch ($minute) {
+      case 15:
+        $minuteDisplayed = 'quarter';
+        break;
+      case 30:
+        $minuteDisplayed = 'half';
+        break;
+      default:
+        $minuteDisplayed = $nf->format($minute);
+      }
       return "$minuteDisplayed $link $hourDisplayed";
     }
 }
